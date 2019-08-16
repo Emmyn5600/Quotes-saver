@@ -2,9 +2,9 @@
     <div *ngFor= 'let myQuote of myQuotes; let i = index'>
         <br><p>{{myQuote.title}}</p>
         <p>{{myQuote.quote}}</p>
-        <button class="btn btn-info">Show Quote</button><br><br>
-        <button class="btn btn-success">up Vote</button>
-        <button class="btn btn-success ml-5">Down Vote</button>
+        <button (click) = 'toggleQuote(i)'class="btn btn-info">Show Quote</button><br><br>
+        <!-- <app-quote-info [quote] = 'myQuote'></app-quote-info> -->
+
 
     </div>
 
