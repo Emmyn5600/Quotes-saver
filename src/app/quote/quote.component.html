@@ -3,7 +3,7 @@
         <br><p>{{myQuote.title}}</p>
         <p>{{myQuote.quote}}</p>
         <button (click)='showAuthor(i)' class="btn btn-info">Show Quote</button><br><br>
-        <app-quote-info *ngIf='myQuote.moreDetails' [quote]='myQuote'></app-quote-info>
+        <app-quote-info *ngIf='myQuote.moreDetails' [quote]='myQuote' (toDelete) = 'removeQuote($event,i)'></app-quote-info>
 
 
     </div>
