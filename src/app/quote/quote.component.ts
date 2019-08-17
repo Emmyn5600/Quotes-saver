@@ -8,11 +8,13 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   myQuotes:Quote[] = [
-    {id:1, title:'Life Quotes', quote:'All that we are is the result of what we have thought',author:"Serena Williams"},
-    {id:2, title:'Health Quotes', quote:'A few germs never hurt anyone',author:"Serena Williams"},
-    {id:3, title:'Wisdom Quotes',quote: 'A great man is always willing to be little',author:"Serena Williams"},
+    new Quote(1, 'Life Quotes', 'All that we are is the result of what we have thought','Serena Williams'),
+    new Quote(2, 'Health Quotes', 'A few germs never hurt anyone','Serena Williams'),
+    new Quote(3, 'Wisdom Quotes', 'A great man is always willing to be little','Serena Williams'),
   ];
-
+showAuthor(index){
+  this.myQuotes[index].moreDetails = !this.myQuotes[index].moreDetails;
+}
   constructor() { }
 
   ngOnInit() {
