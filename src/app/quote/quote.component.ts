@@ -15,6 +15,11 @@ export class QuoteComponent implements OnInit {
 showAuthor(index){
   this.myQuotes[index].moreDetails = !this.myQuotes[index].moreDetails;
 }
+removeQuote(toDelete,index){
+  if(toDelete){
+    this.myQuotes.splice(index,1);
+  }
+}
   constructor() { }
 
   ngOnInit() {
