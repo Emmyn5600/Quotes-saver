@@ -2,8 +2,8 @@
     <div *ngFor= 'let myQuote of myQuotes; let i = index'>
         <br><p>{{myQuote.title}}</p>
         <p>{{myQuote.quote}}</p>
-        <button (click) = 'toggleQuote(i)'class="btn btn-info">Show Quote</button><br><br>
-        <!-- <app-quote-info [quote] = 'myQuote'></app-quote-info> -->
+        <button (click)='showAuthor(i)' class="btn btn-info">Show Quote</button><br><br>
+        <app-quote-info *ngIf='myQuote.moreDetails' [quote]='myQuote'></app-quote-info>
 
 
     </div>
