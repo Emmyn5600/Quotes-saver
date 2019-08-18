@@ -8,17 +8,28 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   myQuotes:Quote[] = [
-    new Quote(1, 'Life Quotes', 'All that we are is the result of what we have thought','Serena Williams'),
-    new Quote(2, 'Health Quotes', 'A few germs never hurt anyone','Serena Williams'),
-    new Quote(3, 'Wisdom Quotes', 'A great man is always willing to be little','Serena Williams'),
+    new Quote(1, 'Life Quotes', 'All that we are is the result of what we have thought','Serena Williams',new Date()),
+    new Quote(2, 'Health Quotes', 'A few germs never hurt anyone','Serena Williams',new Date()),
+    new Quote(3, 'Wisdom Quotes', 'A great man is always willing to be little','Serena Williams',new Date()),
   ];
 showAuthor(index){
   this.myQuotes[index].moreDetails = !this.myQuotes[index].moreDetails;
 }
 removeQuote(toDelete,index){
   if(toDelete){
+    let confirmDelete = confirm('Are you sure you want to delete this quote?');
+
+  if(confirmDelete){
     this.myQuotes.splice(index,1);
   }
+}
+}
+
+addNewQuote(myQuote){
+  let myQuoteLength = this.myQuotes.length;
+  myQuote.id = myQuoteLength + 1;
+  myQuote.datePosted = new Date();
+  this.myQuotes.push(myQuote)
 }
   constructor() { }
 
